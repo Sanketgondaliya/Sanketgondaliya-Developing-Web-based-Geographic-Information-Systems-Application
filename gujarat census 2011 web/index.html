@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gujarat Census 2011</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v9.2.4/ol.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Gujarat Census 2011</h1>
+    </header>
+    <div id="map" class="map"></div>
+    <div id="basemap-controls" class="basemap-controls">
+        <h2>Select Map</h2>
+        <fieldset class="basemaps-fieldset">
+            <label>
+                <input type="radio" name="basemap" value="osm" checked onchange="switchBasemap(this.value)"> OSM
+            </label>
+            <label>
+                <input type="radio" name="basemap" value="google" onchange="switchBasemap(this.value)"> Google
+            </label>
+        </fieldset>
+    </div>
+    <div id="control-buttons" class="control-buttons">
+        <h2>Select Layers</h2>
+        <fieldset class="layers-fieldset">
+            <label>
+                <input type="checkbox" id="layer-sanket:Total Population" checked onchange="toggleLayer('sanket:Total Population', this.checked)">Total population
+            </label>
+            <label>
+                <input type="checkbox" id="layer-sanket:Male" checked onchange="toggleLayer('sanket:Male', this.checked)">Percentage Male population
+            </label>
+            <label>
+                <input type="checkbox" id="layer-sanket:Female" checked onchange="toggleLayer('sanket:Female', this.checked)">Percentage Female population
+            </label>
+            <label>
+                <input type="checkbox" id="layer-sanket:Total Household" checked onchange="toggleLayer('sanket:Total Household', this.checked)">Percentage Household
+            </label>
+        </fieldset>
+        <div class="button-group">
+            <button onclick="applyCqlFilter()">Apply CQL Filter</button>
+            <button onclick="removeCqlFilter()">Remove CQL Filter</button>
+        </div>
+        <label for="filter-2">Select Condition:</label>
+        <select id="filter-2">
+            <option value="None">None</option>
+            <option value=">">Greater Than</option>
+            <option value="<">Less Than</option>
+            <option value="==">Equal to</option>
+        </select>
+        <div class="input-container">
+            <label for="num">Enter Value:</label>
+            <input type="number" id="num" class="number-input" />
+        </div>
+        <button id="apply-filter-button" onclick="applyFilter()">Apply Filter</button>
+        <div class="button-group">
+            <button onclick="displayLegend()">Show Legend</button>
+            <button onclick="showFeatureInfo()">Get Feature Info</button>
+            <button onclick="clearFeatureInfo()">Clear Feature Info</button>
+        </div>
+    </div>
+    <div id="feature-info" class="feature-info">Click on the map to get feature information</div>
+    <div id="legend" class="legend"></div>
+    <script src="https://cdn.jsdelivr.net/npm/ol@v9.2.4/dist/ol.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.11.0/proj4.js" integrity="sha512-iJs/hgHOlo6Eo8i+nYtuEPa+CZ6E3C2Z0s1LkSuvLtclMQlqmxPjP6XaXDi0Ki6NsUuQ2Zmo0UeFOLSgjbv5+A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="map.js"></script>
+</body>
+</html>

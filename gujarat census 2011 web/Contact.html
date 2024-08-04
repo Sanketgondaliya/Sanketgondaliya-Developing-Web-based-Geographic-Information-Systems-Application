@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        input[type="submit"] {
+            background: #0779e4;
+            color: #fff;
+            padding: 10px;
+            border: 0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background: #005bb5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Contact</h1>
+        <form action="mailto:sanketgondaliya6@gmail.com" method="post" enctype="text/plain">
+            <label>Your Name: </label>
+            <input type="text" name="YourName" value=""><br>
+            <label>Enter Your Email: </label>
+            <input type="email" name="YourMail"><br><br>
+            <label>Enter Your Request:</label><br>
+            <textarea rows="4" cols="50" name="YourMessage"></textarea><br>
+            <input type="submit" value="Submit"><br>
+        </form>
+    </div>
+</body>
+
+</html>

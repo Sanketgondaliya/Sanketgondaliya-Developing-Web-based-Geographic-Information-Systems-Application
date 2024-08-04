@@ -1,0 +1,246 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #c6d8f8;
+    height: 100vh;
+    overflow: hidden;
+    /* Prevent body scrollbars */
+}
+
+/* Container for map and sidebar */
+
+/* Map styling */
+.map {
+    height: 100vh;
+    /* Make sure the map takes the full height */
+    width: 100%;
+    /* Full width */
+}
+
+/* Basemap controls styling */
+.basemap-controls {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    background: rgb(227, 232, 250);
+    padding: 10px;
+    border: 3px solid #210c52;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 180px;
+    height: 80px;
+}
+
+.basemap-controls h2 {
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+/* Control buttons styling */
+.control-buttons {
+    position: absolute;
+    top: 130px;
+    left: 30px;
+    background: rgb(227, 232, 250);
+    padding: 10px;
+    border: 3px solid #210c52;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 8.7cm;
+    /* Adjusted width for control buttons box */
+    max-height: 1000px;
+    overflow-y: auto;
+    /* Enable vertical scrolling if content overflows */
+}
+
+.control-buttons h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+/* Each checkbox on a new row */
+.layers-fieldset label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Button group styling */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 15px 0;
+    gap: 5px;
+    /* Space between buttons */
+}
+
+.button-group button {
+    height: 1.5cm;
+    width: 2.8cm;/* Adjusted width for a better fit */
+    background-color: #210c52;
+    color: rgb(253, 250, 250);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 13px;/* Adjusted font size */
+}
+
+.button-group button:hover {
+    background-color: #6893e2;
+}
+
+
+
+.legend {
+    position: fixed;
+    bottom: 10px;
+    right: 50px;
+    z-index: 1000;
+    background-color: rgb(227, 232, 250);
+    border: 3px solid #210c52;
+    padding: 3px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 180px;
+    /* Set a maximum width for the legend */
+    max-height: 600px;
+    font-size: 12px;
+    ;
+}
+
+/* OpenLayers specific styles */
+.ol-overviewmap {
+    left: 0.5em;
+    bottom: 2.5em;
+}
+
+.ol-mouse-position {
+    top: 96% !important;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Semi-transparent black background */
+    color: #ffffff;
+    /* White text color */
+    padding: 5px 10px;
+    /* Padding around the text */
+    border-radius: 5px;
+    /* Rounded corners */
+    font-size: 15px;
+    /* Adjust font size as needed */
+    text-align: center;
+    /* Center the text */
+    white-space: nowrap;
+    /* Prevent text from wrapping to a new line */
+    width: auto;
+    /* Adjust width based on text content */
+    max-width: 200px;
+    /* Optional: Set a maximum width if needed */
+}
+
+/* Inner element of the scale line */
+.ol-scale-line-inner {
+    border: 1px solid var(--ol-subtle-foreground-color);
+    border-top: none;
+    /* Remove top border for a cleaner look */
+    color: var(--ol-foreground-color);
+    font-size: 10px;
+    text-align: center;
+    margin: 1px;
+    padding: 2px 4px;
+    /* Add padding to make the content more readable */
+    border-radius: 3px;
+    /* Slightly rounded corners for the inner element */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Darker background for contrast */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    /* Subtle shadow for depth */
+    transition: all 0.25s;
+    /* Smooth transition for interactive effects */
+}
+
+/* Main scale line container */
+.ol-scale-line {
+    background: var(--ol-partial-background-color);
+    border: 1px solid var(--ol-subtle-foreground-color);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow for depth */
+    border-radius: 3px;
+    /* Rounded corners for the main container */
+    padding: 2px 4px;
+    /* Add padding for inner content */
+    margin: 0.5em;
+    /* Adjust margin as needed */
+    width: auto;
+    /* Adjust width based on content */
+    transition: all 0.25s;
+    /* Smooth transition for hover effects */
+}
+
+header {
+    background-color: rgb(227, 232, 250);
+    /* Background color for the header */
+    color: #210c52;
+    /* Text color for the heading */
+    text-align: center;
+    /* Center the text */
+    padding: 20spx;
+    /* Padding around the text */
+    font-size: 15px;
+    /* Font size for the heading */
+    font-weight: bold;
+    /* Make the heading bold */
+    position: fixed;
+    /* Fixed position to stay at the top */
+    top: 0;
+    height: 10%;
+    width: 50%;
+    border: 3px solid #210c52;
+    border-radius: 10px;
+    left: 280px;
+    z-index: 1000;
+    /* Ensure the header stays on top */
+}
+
+/* Adjust the container height to account for the header */
+.container {
+    margin-top: 80px;
+    /* Space for the header */
+}
+.number-input {
+    width: 100px; /* Set the width of the input box */
+    height: 20px; /* Set the height of the input box */
+    padding: 5px; /* Add some padding inside the input box */
+    font-size: 14px; /* Set the font size inside the input box */
+    border: 1px solid #0f0e0e; /* Border color and style */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+/* Feature info and legend styling */
+.feature-info {
+    position: fixed; /* Change from absolute to fixed */
+    bottom: 20%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, 50%); /* Adjust to truly center */
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 2px 4px #210c52;
+}
+#apply-filter-button {
+    display: flex;
+    background-color: #210c52;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 119px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
